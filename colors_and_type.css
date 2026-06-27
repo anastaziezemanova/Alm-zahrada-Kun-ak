@@ -1,0 +1,149 @@
+/* ============================================================
+   ALMÉ GARDENS — Design Tokens
+   Studio pro návrh soukromých zahrad · v1.0 · květen 2026
+   Colors + Typography foundations.
+   Import this once at the top of any Almé document.
+   ------------------------------------------------------------
+   Fonts load from Google Fonts (all three are free/GF families):
+     EB Garamond  — display / headlines / quotes / wordmark
+     Inter        — body / UI / navigation / tables
+     JetBrains Mono — technical captions, scales, coordinates, tags
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- PRIMARY TRIO ---------- */
+  --moss:        #2D3A2E;   /* Deep Moss Green · PMS 5743 C — primary accent */
+  --charcoal:    #1A1A1A;   /* Charcoal · Process Black — primary text */
+  --cream:       #F5F1EA;   /* Warm Cream · PMS 9043 C — primary background */
+
+  /* ---------- SECONDARY TRIO ---------- */
+  --stone:       #8C8478;   /* Stone Gray · PMS 416 C — muted labels/descriptors */
+  --bronze:      #8B7355;   /* Aged Bronze · PMS 7531 C — warm secondary accent */
+  --offwhite:    #FAF8F3;   /* Off-White · PMS 9040 C — lifted surface on cream */
+
+  /* ---------- EXTENDED NEUTRALS / SURFACES (light) ---------- */
+  --surface-1:   #EDE7DA;   /* paper plane — cards, panels */
+  --surface-2:   #E5DFD0;   /* deeper paper — insets, fills, divid. blocks */
+  --hairline:    #DCD5C6;   /* hairline borders on cream */
+
+  /* ---------- TEXT (light theme) ---------- */
+  --text-1:      #1A1A1A;   /* charcoal — primary */
+  --text-2:      #4A4A45;   /* secondary — subheads, lead-in */
+  --text-3:      #6A655B;   /* tertiary — captions, meta */
+  --text-on-moss:#F5F1EA;   /* cream on moss/charcoal */
+
+  /* ---------- DARK THEME ---------- */
+  --dark-bg:     #1B2620;   /* deep moss-black ground */
+  --dark-surface:#23302A;   /* lifted panel on dark */
+  --dark-hairline:#36433B;  /* hairline on dark */
+  --gold:        #C9A77A;   /* warm gold — accent reserved for dark surfaces */
+  --text-on-dark-1:#F2EEE4; /* primary text on dark */
+  --text-on-dark-2:#B9B6A8; /* secondary text on dark */
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --serif:  'EB Garamond', 'Cormorant Garamond', Georgia, 'Times New Roman', serif; /* @kind font */
+  --sans:   'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; /* @kind font */
+  --mono:   'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; /* @kind font */
+
+  /* ---------- TYPE SCALE (A3 / print-leaning, px @ ~96dpi) ---------- *
+     Hierarchy is a rhythm tool. Never more than three sizes per layout.
+     Prefer space over size when you need emphasis.                      */
+  --fs-hero:   96px;   /* EB Garamond Regular — hero claim */
+  --fs-h1:     56px;   /* EB Garamond Regular — page / project title */
+  --fs-h2:     34px;   /* EB Garamond Italic  — section / subtitle */
+  --fs-h3:     13px;   /* Inter Semibold, tracked caps — eyebrow / label */
+  --fs-quote:  22px;   /* EB Garamond Italic — pull quote */
+  --fs-lead:   19px;   /* Inter Regular — lead paragraph */
+  --fs-body:   16px;   /* Inter Regular — body */
+  --fs-small:  13px;   /* Inter Regular — small print */
+  --fs-caption:11px;   /* JetBrains Mono — technical caption / scale / meta */
+
+  /* ---------- TRACKING ---------- */
+  --track-logo:  0.22em;  /* wordmark — canonical */
+  --track-caps:  0.18em;  /* eyebrows, nav, labels */
+  --track-mono:  0.08em;  /* mono captions */
+  --track-tight: -0.01em; /* large serif display */
+
+  /* ---------- WEIGHTS ---------- */
+  --w-reg: 400; /* @kind font */
+  --w-med: 500; /* @kind font */
+  --w-semi: 600; /* @kind font */
+
+  /* ---------- LINE HEIGHTS ---------- */
+  --lh-tight: 1.05; /* @kind other */
+  --lh-snug: 1.25; /* @kind other */
+  --lh-body: 1.6; /* @kind other */
+  --lh-loose: 1.75; /* @kind other */
+
+  /* ---------- SPACING (8px base; airy by default) ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 16px; --s-4: 24px;
+  --s-5: 40px; --s-6: 64px; --s-7: 96px; --s-8: 144px;
+
+  /* ---------- BORDERS / RADII / SHADOW ----------
+     Almé is rectilinear & editorial. Radii are near-zero.
+     Elevation is expressed with hairlines and generous space,
+     not heavy drop shadows. */
+  --radius-0: 0px;
+  --radius-sm: 2px;     /* the maximum — buttons, input wells */
+  --radius-pill: 999px; /* monogram seal / circular marks only */
+  --border-hair: 1px solid var(--hairline);
+  --border-moss: 1px solid var(--moss);
+  --shadow-soft: 0 1px 2px rgba(26,26,26,.04), 0 12px 32px -18px rgba(26,26,26,.18);
+}
+
+/* ============================================================
+   SEMANTIC TYPOGRAPHY HELPERS
+   Use these classes directly, or copy the rules into components.
+   ============================================================ */
+
+.alme-hero {
+  font-family: var(--serif); font-weight: var(--w-reg);
+  font-size: var(--fs-hero); line-height: var(--lh-tight);
+  letter-spacing: var(--track-tight); color: var(--text-1);
+  text-wrap: balance;
+}
+.alme-h1 {
+  font-family: var(--serif); font-weight: var(--w-reg);
+  font-size: var(--fs-h1); line-height: var(--lh-snug);
+  letter-spacing: var(--track-tight); color: var(--text-1);
+  text-wrap: balance;
+}
+.alme-h2 {
+  font-family: var(--serif); font-weight: var(--w-reg); font-style: italic;
+  font-size: var(--fs-h2); line-height: var(--lh-snug); color: var(--text-2);
+}
+.alme-eyebrow {
+  font-family: var(--sans); font-weight: var(--w-semi);
+  font-size: var(--fs-h3); line-height: 1; text-transform: uppercase;
+  letter-spacing: var(--track-caps); color: var(--moss);
+}
+.alme-quote {
+  font-family: var(--serif); font-style: italic; font-weight: var(--w-reg);
+  font-size: var(--fs-quote); line-height: var(--lh-snug); color: var(--text-1);
+  text-wrap: pretty;
+}
+.alme-lead {
+  font-family: var(--sans); font-weight: var(--w-reg);
+  font-size: var(--fs-lead); line-height: var(--lh-loose); color: var(--text-2);
+  text-wrap: pretty;
+}
+.alme-body {
+  font-family: var(--sans); font-weight: var(--w-reg);
+  font-size: var(--fs-body); line-height: var(--lh-body); color: var(--text-1);
+  text-wrap: pretty;
+}
+.alme-small {
+  font-family: var(--sans); font-weight: var(--w-reg);
+  font-size: var(--fs-small); line-height: var(--lh-body); color: var(--text-3);
+}
+.alme-caption {
+  font-family: var(--mono); font-weight: var(--w-reg);
+  font-size: var(--fs-caption); line-height: 1.5; text-transform: uppercase;
+  letter-spacing: var(--track-mono); color: var(--text-3);
+}
+.alme-wordmark {
+  font-family: var(--serif); font-weight: var(--w-reg);
+  letter-spacing: var(--track-logo); text-transform: uppercase;
+}

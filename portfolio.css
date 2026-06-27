@@ -1,0 +1,47 @@
+/* ============================================================
+   ALMÉ — A3 Portfolio frame
+   A3 landscape: 420 × 297 mm → 1480 × 1047 px canvas (ratio 1.414)
+   Each slide links colors_and_type.css then this file.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:#cfcabd;                 /* neutral studio backdrop behind the page */
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;font-family:var(--sans);
+}
+.stage{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.page{
+  width:1480px;height:1047px;flex:none;
+  background:var(--cream);position:relative;overflow:hidden;
+  transform-origin:center center;
+  box-shadow:0 30px 80px -40px rgba(26,26,26,.5);
+}
+.page.moss{background:var(--moss)}
+.page.dark{background:var(--dark-bg)}
+
+/* shared furniture --------------------------------------------------- */
+.runhead{position:absolute;top:54px;left:64px;right:64px;display:flex;
+  justify-content:space-between;align-items:baseline;}
+.runhead .wm{font-family:var(--serif);font-size:22px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--moss)}
+.runhead.on-dark .wm{color:var(--cream)}
+.runhead .meta{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3)}
+.runhead.on-dark .meta{color:rgba(242,238,228,.6)}
+
+.runfoot{position:absolute;bottom:50px;left:64px;right:64px;display:flex;
+  justify-content:space-between;align-items:baseline;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3)}
+.runfoot.on-dark{color:rgba(242,238,228,.55)}
+
+.eyebrow{font-family:var(--sans);font-weight:600;font-size:13px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--moss)}
+.eyebrow.on-dark{color:var(--gold)}
+
+.hairline{height:1px;background:var(--hairline);border:none}
+.hairline.on-dark{background:var(--dark-hairline)}
+
+/* scale-to-fit for standalone viewing (no double-scale when iframe==1480) */
